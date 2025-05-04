@@ -17,6 +17,7 @@ A quick reference for performing common data operations in **Pandas**.
 - [Duplicates](#duplicates)
 - [Pivot & Melt](#pivot--melt)
 - [Export Data](#export-data)
+- [Data Visualization with matplotlib](#data-visualization-with-matplotlib)
 
 ---
 
@@ -140,4 +141,56 @@ df.melt(id_vars=['id'], value_vars=['sales', 'profit'], var_name='metric', value
 ```python
 df.to_csv('output.csv', index=False)
 df.to_excel('output.xlsx')
+```
+
+## Data Visualization with matpotlib
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create a simple DataFrame
+data = {'category': ['A', 'B', 'C', 'D'],
+        'value': [10, 20, 30, 40]}
+df = pd.DataFrame(data)
+
+# Line Plot
+df.plot(x='category', y='value', kind='line')  # Plot a line chart
+plt.title('Line Plot')  # Set the title of the plot
+plt.xlabel('Category')  # Set the label for the x-axis
+plt.ylabel('Value')  # Set the label for the y-axis
+plt.show()  # Display the plot
+
+# Bar Plot
+df.plot(x='category', y='value', kind='bar')  # Plot a bar chart
+plt.title('Bar Plot')
+plt.xlabel('Category')
+plt.ylabel('Value')
+plt.show()
+
+# Histogram
+df['value'].plot(kind='hist', bins=4)  # Plot a histogram with 4 bins
+plt.title('Histogram')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.show()
+
+# Scatter Plot
+df.plot(x='category', y='value', kind='scatter')  # Plot a scatter plot
+plt.title('Scatter Plot')
+plt.xlabel('Category')
+plt.ylabel('Value')
+plt.show()
+
+# Box Plot
+df['value'].plot(kind='box')  # Plot a box plot to show distribution and quartiles
+plt.title('Box Plot')
+plt.show()
+
+# Area Plot
+df.plot(x='category', y='value', kind='area')  # Plot an area chart
+plt.title('Area Plot')
+plt.xlabel('Category')
+plt.ylabel('Value')
+plt.show()
 ```
