@@ -51,10 +51,21 @@ df.dtypes          # Data types of columns
 ```python
 df['column']                   # Select a single column
 df[['col1', 'col2']]            # Select multiple columns
-df.loc[0]                       # Select row by label
-df.iloc[0]                      # Select row by position
-df[df['age'] > 30]              # Filter rows based on a condition
-df[(df['age'] > 30) & (df['gender'] == 'M')]  # Multiple conditions
+
+df.loc[0]                       # Select the row with label '0' (index-based label)
+df.loc[0:2]                     # Select rows with labels from 0 to 2 (inclusive)
+df.loc[df['age'] > 30]          # Select rows where 'age' column value is greater than 30
+df.loc[df['age'] > 30, ['name', 'age']]  # Select specific columns for rows where 'age' > 30
+
+df.iloc[0]                      # Select the first row (by position)
+df.iloc[0:2]                    # Select the first two rows (positions 0 and 1)
+df.iloc[:, 1:3]                 # Select columns from position 1 to 2 (exclusive) for all rows
+df.iloc[0, 1]                   # Select the element at row 0 and column 1 (position-based)
+
+df[df['age'] > 30]              # Filter rows where 'age' column value is greater than 30
+
+df[(df['age'] > 30) & (df['gender'] == 'M')]  # Multiple conditions using 'and' (&)
+df[(df['age'] > 30) | (df['gender'] == 'M')]  # Multiple conditions using 'or' (|)
 ```
 
 ## Sort Data
