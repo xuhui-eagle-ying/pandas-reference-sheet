@@ -46,6 +46,7 @@ df.describe()      # Summary statistics
 df.columns         # Column names
 df.dtypes          # Data types of columns
 df.shape           # Number of rows and columns
+df['column'].value_counts()  # Count of unique values in a specific column
 ```
 
 ## Select & Filter
