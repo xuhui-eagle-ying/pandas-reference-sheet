@@ -17,7 +17,7 @@ A quick reference for performing common data operations in **Pandas**.
 - [Duplicates](#duplicates)
 - [Pivot & Melt](#pivot--melt)
 - [Export Data](#export-data)
-- [Data Visualization with matplotlib](#data-visualization-with-matplotlib)
+- [Data Visualization](#data-visualization)
 
 ---
 
@@ -143,7 +143,7 @@ df.to_csv('output.csv', index=False)
 df.to_excel('output.xlsx')
 ```
 
-## Data Visualization with matpotlib
+## Data Visualization
 
 ```python
 import pandas as pd
