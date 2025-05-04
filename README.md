@@ -45,6 +45,7 @@ df.info()          # DataFrame info (non-null count, types)
 df.describe()      # Summary statistics
 df.columns         # Column names
 df.dtypes          # Data types of columns
+df.shape           # Number of rows and columns
 ```
 
 ## Select & Filter
